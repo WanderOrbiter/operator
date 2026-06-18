@@ -154,3 +154,16 @@ func process_choice(index: int) -> void:
 	var choice = current_choices[index]
 	append_terminal("[color=cyan]> %s[/color]" % choice.label)
 	show_node(choice.next)
+
+		# input a number key and return the corresponding choice index
+func get_input_choice(event: InputEvent) -> int:
+	if event is InputEventKey and event.pressed:
+		if event.scancode >= KEY_1 and event.scancode <= KEY_9:
+			var choice_index = event.scancode - KEY_1
+			if choice_index < current_choices.size():
+				return choice_index
+	return -1
+	
+
+func _unhandled_input(event: InputEvent) -> void:
+	get_input_choice(event)
