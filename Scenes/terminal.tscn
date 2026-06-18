@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmmgyapf5f0as"]
+
+[ext_resource type="Script" uid="uid://d1ey5fs5hxnr8" path="res://Scripts/terminal.gd" id="1_0dftn"]
+
+[node name="Terminal" type="Node2D"]
+script = ExtResource("1_0dftn")
+
+[node name="Panel" type="VBoxContainer" parent="."]
+offset_right = 1150.0
+offset_bottom = 35.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="LineEdit" type="LineEdit" parent="Panel"]
+layout_mode = 2
+placeholder_text = "Type choice number and press Enter"
+max_length = 3
+caret_blink = true
