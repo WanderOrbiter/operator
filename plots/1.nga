@@ -1,0 +1,57 @@
+# 定义角色
+define e = Character("艾琳", color="#c8ffc8")
+define a = Character("我", color="#ffb6c1")
+define n = Character("旁白", color="#cccccc")
+
+# 游戏开始
+label start:
+
+    scene bg forest_clearing with fade
+    # 背景图：森林空地
+
+    n "清晨的阳光透过树叶，洒在森林空地上。"
+    n "我站在草地中央，等待约好的朋友。"
+
+    show eileen happy
+    with dissolve
+    # 显示角色艾琳的立绘，使用溶解过渡效果
+
+    e "嘿！抱歉我来晚了。"
+
+    a "没关系，我也刚到。"
+
+    e "今天天气真好，不如我们去河边走走吧？"
+
+    menu:
+        "同意去河边":
+            jump river_path
+
+        "想去山顶看看":
+            jump mountain_path
+
+label river_path:
+
+    n "你们沿着小径，走到了河边。"
+    e "你看，水里有鱼！"
+    a "真的哎，好漂亮。"
+
+    jump ending
+
+label mountain_path:
+
+    n "你们爬上了山顶，视野瞬间开阔。"
+    e "哇，整个小镇都能看到！"
+    a "这景色真值得爬上来。"
+
+    jump ending
+
+label ending:
+
+    n "不管选择了哪条路，你们度过了一个愉快的上午。"
+    n "有时候，重要的不是去哪里，而是一起去的人。"
+
+    e "今天真开心，我们以后也经常这样吧？"
+    a "嗯，一言为定。"
+
+    n "故事结束。"
+    return

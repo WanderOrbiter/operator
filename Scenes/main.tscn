@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c15vy8cla1qn7"]
+
+[ext_resource type="Script" uid="uid://cpcw5rdr8q727" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://btdx7oil0o110" path="res://Scripts/reader.gd" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://b340fmqr0o304" path="res://Scripts/manager.gd" id="3_8gbba"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_jjgbg")
+
+[node name="Manager" type="Node" parent="."]
+script = ExtResource("3_8gbba")
+
+[node name="Reader" type="Node" parent="."]
+script = ExtResource("2_bo1nx")
+metadata/_custom_type_script = "uid://btdx7oil0o110"
